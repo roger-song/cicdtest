@@ -1,5 +1,13 @@
 language: python
 python:
- - 3.6
+- 3.6
 script:
-  - python -m pytest -v
+- python -m pytest -v
+before_install:
+- openssl aes-256-cbc -K $encrypted_9e25f1e9f785_key -iv $encrypted_9e25f1e9f785_iv -in dev-test-ec2.pem.enc -out dev-test-ec2.pem -d
+deploy:
+  provider: script
+  script: sh deploy.sh $TRAVIS_BRANCH $TRAVIS_JOB_NUMBER
+  skip_cleanup: true
+  on:
+    branch: develop
