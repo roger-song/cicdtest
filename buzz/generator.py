@@ -1,4 +1,5 @@
 import random
+import boto3
 
 buzz = ('continuous testing', 'continuous integration',
     'continuous deployment', 'continuous improvement', 'devops')

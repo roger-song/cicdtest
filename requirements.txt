@@ -1,1 +1,7 @@
 pytest==3.0.6
+pandas
+oauth
+requests
+awscli
+boto3
+s3fs
